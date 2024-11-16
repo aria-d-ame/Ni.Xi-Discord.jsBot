@@ -12,7 +12,7 @@ Command.setDefaults({
 // Set the default onError function for components
 Component.setDefaults({
     onError: (ctx, error) => {
-        return ctx.reply('Oh no! Something when wrong!')
+        return ctx.reply('Oh no! Something went wrong!')
     }
 });
 
@@ -29,7 +29,7 @@ const client = new GClient({
     // Enable message support
     messageSupport: true,
     // Set the prefix for message commands
-    messagePrefix: 'c.',
+    messagePrefix: 'n.',
     // Set the guild where you will be developing your bot. This is useful because guild slash commands update instantly.
     devGuildId: process.env.devGuildId,
     // Set the intents you will be using (https://discordjs.guide/popular-topics/intents.html#gateway-intents)

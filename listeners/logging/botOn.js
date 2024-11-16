@@ -171,11 +171,18 @@ new Listener({
 
   run: async (ctx) => {
     console.log(`✅ ${ctx.user.tag} is online!`);
-    ctx.user.setActivity("𝔸𝕕𝕖𝕡𝕥𝕦𝕤 𝔸𝕣𝕚𝕒⁺₊✧", {
+    ctx.user.setActivity(`${ctx.guilds.cache.size} servers`, {
         type: ActivityType.Watching,
-        url: "https://discord.gg/MW3r57vamW"
+        url: "https://discord.gg/MTYEjW3MJA"
     });
-    const modChannelId = '1278877530635374675';
+    setInterval(() => {
+        ctx.user.setActivity(`${ctx.guilds.cache.size} servers`, {
+            type: ActivityType.Watching,
+            url: "https://discord.gg/MTYEjW3MJA"
+        });
+    }, 60000);
+
+    const modChannelId = '1297266019764801600';
     const modChannel = ctx.channels.cache.get(modChannelId);
     if (modChannel) {
         await modChannel.send({ content: `${ctx.user.tag} is now online!` });
@@ -183,16 +190,16 @@ new Listener({
         console.log('Mod channel not found.');
     };
 
-    setInterval( async () => {
-        await setupRoleAssignments(ctx);
-    }, 600000);
+    // setInterval( async () => {
+    //     await setupRoleAssignments(ctx);
+    // }, 600000);
 
-    setInterval( async () => {
-        await rankingRoles(ctx);
-    }, 600000);
+    // setInterval( async () => {
+    //     await rankingRoles(ctx);
+    // }, 600000);
 
-    // Fetch bumps and set reminders
-    await setupBumpReminders(ctx);
+    // // Fetch bumps and set reminders
+    // await setupBumpReminders(ctx);
 
 },
 })
