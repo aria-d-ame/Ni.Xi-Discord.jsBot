@@ -5,6 +5,9 @@ let counting = new Schema({
   Channel: String,
   Number: Number,
   LastUser: String,
+  CorrectReaction: String,
+  IncorrectReaction: String,
+  NumberOnly: Number,
   RoleAssignments: [{ userId: String, assignedAt: Date }] 
 })
 

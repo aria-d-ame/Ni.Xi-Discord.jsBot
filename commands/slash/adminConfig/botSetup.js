@@ -70,7 +70,6 @@ new Command({
     await ctx.reply({
       embeds: [setupEmbed],
       components: [setupButtons, setupButtons2],
-      ephemeral: false,
       fetchReply: true
     });
   }
